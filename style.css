@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    max-width: 360px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 30px 20px;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.heart {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 80px;
+}
+
+button {
+    padding: 14px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background-color: white;
+    color: #ff4d6d;
+    position: absolute;
+    right: 0;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Falling hearts & badges */
+.fall {
+    position: fixed;
+    top: -60px;
+    animation: fall linear forwards;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.valentine-badge {
+    background: white;
+    color: #ff4d6d;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #ff4d6d;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    white-space: nowrap;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(6deg);
+        opacity: 0;
+    }
+}
